@@ -152,3 +152,27 @@ int d = 10;
 // сначала увеличивается до 11, потом 11 + 3 = 14
 int sumPre = ++d + 3;   // 11 + 3 = 14
 Console.WriteLine($"++d + 3 = {sumPre}, d = {d}");
+
+
+Console.WriteLine();
+Console.WriteLine("Калькулятор скидки");
+
+Console.Write("Введите сумму покупки: ");
+double purchaseAmount = double.Parse(Console.ReadLine());
+
+Console.Write("Есть карта постоянного клиента? (1 - да, 0 - нет): ");
+int cardInput = int.Parse(Console.ReadLine());
+bool hasLoyaltyCard = (cardInput == 1);
+
+Console.Write("Введите количество товаров в чеке: ");
+int itemCount = int.Parse(Console.ReadLine());
+
+bool amountCondition = purchaseAmount >= 3000;
+bool countCondition = itemCount >= 3;
+bool eligibleForDiscount = (amountCondition && countCondition) || hasLoyaltyCard;
+
+Console.WriteLine();
+Console.WriteLine($"Сумма покупки >= 3000: {amountCondition}");
+Console.WriteLine($"Количество товаров >= 3: {countCondition}");
+Console.WriteLine($"Есть карта постоянного клиента: {hasLoyaltyCard}");
+Console.WriteLine($" eligibleForDiscount = {eligibleForDiscount}");
