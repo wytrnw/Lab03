@@ -128,3 +128,27 @@ Console.Write("Введите целое число: ");
 int number = int.Parse(Console.ReadLine());
 bool isEven = number % 2 == 0;
 Console.WriteLine($"Чётное: {isEven}");
+
+
+Console.WriteLine();
+Console.WriteLine("Инкремент в выражении");
+
+int a = 5;
+// отдаёт старое значение, потом увеличивает
+Console.WriteLine($"a++ в строке: {a++}");
+Console.WriteLine($"После a++: a = {a}");
+
+int b = 5;
+// сначала увеличивает, потом отдаёт новое значение
+Console.WriteLine($"++b в строке: {++b}");
+Console.WriteLine($"После ++b: b = {b}");
+
+int c = 10;
+// используется старое значение 10, потом C становится 11
+int sumPost = c++ + 3;  // 10 + 3 = 13
+Console.WriteLine($"c++ + 3 = {sumPost}, c = {c}");
+
+int d = 10;
+// сначала увеличивается до 11, потом 11 + 3 = 14
+int sumPre = ++d + 3;   // 11 + 3 = 14
+Console.WriteLine($"++d + 3 = {sumPre}, d = {d}");
